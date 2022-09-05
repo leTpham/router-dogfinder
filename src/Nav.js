@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+
 
 function Nav({dogs}) {
   return (
@@ -8,8 +9,8 @@ function Nav({dogs}) {
       {dogs.map(dog => (
 
         <li key={dog.name}>
-          
-          <Link to={`/dogs/${dog.src}`}> Show me {dog.name}!</Link>
+
+          <NavLink to={`/dogs/${dog.src}`}> Show me {dog.name}!</NavLink>
         </li>
       ))}
 

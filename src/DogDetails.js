@@ -1,16 +1,15 @@
 import { useParams } from "react-router-dom";
 
-function DogDetails({dogs}) {
+function DogDetails({ dogs }) {
   const params = useParams();
   let age;
   let facts = [];
   for (let dog of dogs) {
-    if (dog.src === params.name) {
+    if (dog.name.toLowerCase() === params.name) {
       age = dog.age;
-      facts = dog.facts
+      facts = dog.facts;
     }
   }
-
 
 
   return (
@@ -21,9 +20,7 @@ function DogDetails({dogs}) {
         {facts.map((fact, index) =>
           <li key={index}> {fact}</li>)}
       </ul>
-        <img src={`/${params.name}.jpg`}/>
-
-
+      <img src={`/${params.name}.jpg`} alt={params.name} />
     </div>
   );
 }

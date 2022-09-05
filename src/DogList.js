@@ -3,6 +3,7 @@ import React from "react";
 
 function DogList({ dogs }) {
   console.log(dogs);
+  //TODO: destructure dog 
   return (
     <div>
       {dogs.map(dog => (
